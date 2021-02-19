@@ -9,7 +9,7 @@
  *   - Returns an array of objects.
  */
 async function searchShows(query) {
-  const url = 'http://api.tvmaze.com/search/shows';
+  const url = 'https://api.tvmaze.com/search/shows';
   //get the shows from the API that match the search query
   const showsArray = await axios.get(url, {params: {q: query}});
 
@@ -88,7 +88,7 @@ $("#search-form").on("submit", async function handleSearch (evt) {
 
 async function getEpisodes(id) {
   //get the list of episodes from the API
-  const episodes = await axios(`http://api.tvmaze.com/shows/${id}/episodes`);
+  const episodes = await axios(`https://api.tvmaze.com/shows/${id}/episodes`);
   return episodes.data;
 }
 
